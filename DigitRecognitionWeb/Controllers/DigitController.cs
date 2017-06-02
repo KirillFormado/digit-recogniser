@@ -10,7 +10,8 @@ namespace DigitRecognition.Controllers
         [HttpPost]
         public int Post([FromBody] IEnumerable<int> data)
         {
-            var img = data;
+            var img = new UserImage(data);
+            
             var isAny = img.Where(i => i != 0);
             return 1;
         }
