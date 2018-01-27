@@ -8,7 +8,7 @@ let result = document.getElementById('result');
 let mousePressed = false;
 let lastX, lastY;
 
-context.lineWidth = 10;
+context.lineWidth = 15;
 context.lineJoin = context.lineCap = 'round';
 
 canvas.onmousedown = e => mousePressed = true;
@@ -35,6 +35,7 @@ function draw(x, y) {
 document.getElementById('clear').onclick = e => {
     context.clearRect(0, 0, canvas.width, canvas.height);
     bufferContext.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height);
+    result.innerText = '';
 }
 
 document.getElementById('recognise').onclick = e => {    
@@ -59,7 +60,7 @@ document.getElementById('recognise').onclick = e => {
             any = true;
         }
         if((i + 1) % 4 == 0){
-            arr.push(any ? 255 : 0);
+            arr.push(any ? 1 : 0);
         }
         any = false;
     }

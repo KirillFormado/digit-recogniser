@@ -7,9 +7,17 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}\\DigitRecognition.csproj"
+                "${workspaceRoot}\\DigitRecognition.sln"                
             ],
             "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "test",
+            "args": [
+                "${workspaceRoot}\\DigitRecognitionServiceUnitTests\\DigitRecognitionServiceUnitTests.csproj"                
+            ],
+            "isTestCommand": true,
             "problemMatcher": "$msCompile"
         }
     ]
